@@ -1,69 +1,34 @@
 📘 README – Heart Disease Prediction (KNN Model)
 
-Project Overview
-
+🩺 Project Overview  
 This project applies a K-Nearest Neighbors (KNN) machine learning model to predict Coronary Artery Disease (CAD) using key clinical indicators. The analysis is based on a medically validated dataset and aims to support early detection of heart disease through data-driven methods.
 
-Dataset & Preprocessing
+📊 Dataset & Preprocessing  
+- Measurements include age, sex, cholesterol, ST depression, exercise-induced angina, fluoroscopy results, and more.  
+- Steps: convert character variables (e.g., `ca`, `thal`) to numeric; create a binary `diagnosis` column (1 = disease present, 0 = none); remove missing rows with `na.omit()`.
 
-The dataset includes several clinical measurements such as age, sex, cholesterol levels, ST depression, exercise-induced angina, and fluoroscopy results.
+🧭 Selected Predictors  
+- Age, sex, exercise-induced angina (`exang`), ST depression (`oldpeak`), number of major vessels with calcium (`ca`).  
+- These are clinically validated indicators of CAD.
 
-Key preprocessing steps included:
+🧮 Modeling Approach  
+- Trained a KNN classifier to separate healthy vs. diseased patients.  
+- Tuned K for best performance and evaluated with accuracy and a confusion matrix.
 
-Converting character variables (e.g., ca, thal) into numeric values
+✅ Results  
+- High overall accuracy.  
+- 90.1% accuracy when predicting no disease.  
+- 76.9% accuracy when predicting presence of disease (36 of 109 illness cases misclassified).
 
-Creating a binary diagnosis column (1 = disease present, 0 = no disease)
+🔍 Interpretation  
+- Strong at flagging patients without CAD.  
+- Lower sensitivity for true disease cases; more predictors or advanced models could improve recall.
 
-Removing missing values using na.omit()
+🚀 Future Directions  
+- Improve sensitivity for severe CAD cases.  
+- Compare KNN with more advanced ML algorithms.  
+- Conduct real-world clinical validation.  
+- Evaluate cost-effectiveness in healthcare settings.
 
-Selected Predictors
-
-Five variables were chosen for the predictive model based on their strong clinical relevance:
-
-Age
-
-Sex
-
-Exercise-Induced Angina (exang)
-
-ST Depression (oldpeak)
-
-Number of Major Vessels with Calcium (ca)
-These variables have been consistently validated in medical literature as significant predictors of CAD.
-
-Modeling Approach
-
-A KNN classification model was trained to distinguish between healthy and diseased patients.
-The model was tuned for optimal K-value performance and validated using accuracy and confusion-matrix evaluation.
-
-Results
-
-The model achieved:
-
-High overall accuracy
-
-90.1% accuracy when predicting no disease
-
-76.9% accuracy when predicting presence of disease (36 of 109 illness cases were misclassified)
-
-Interpretation
-
-The model works very well for identifying patients without CAD.
-
-Sensitivity for detecting actual disease cases is lower, suggesting the need for additional predictors or more advanced models.
-
-Future Directions
-
-The HTML report identifies several research extensions, including:
-
-Improving sensitivity for severe CAD cases
-
-Comparing KNN with more advanced ML algorithms
-
-Conducting real-world clinical validation
-
-Evaluating cost-effectiveness in healthcare settings
-
-Conclusion
-
-The KNN approach proves effective for general CAD prediction and demonstrates strong potential as a clinical decision-support tool. However, further refinement is required before applying it to high-risk clinical scenarios.
+📌 Conclusion  
+The KNN approach is effective for general CAD prediction and shows promise as a decision-support tool, but further refinement is needed before applying it to high-risk scenarios.
